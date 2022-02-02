@@ -15,7 +15,7 @@ const socketCliente = io();
 socketCliente.on('connect', ()=>{ // El on es para estar escuchando algun evento en el servidor, en este caso el evento de cuando alguien se conecte
 
 
-    lblOffline.style.display = 'none'; //Esto es pura carpinteria para el html
+    lblOffline.style.display = 'none';
     lblOnline.style.display = '';
 
 }) //Este listener me va ayudar a saber cuando el cliente se conecta al servidor
@@ -23,7 +23,7 @@ socketCliente.on('connect', ()=>{ // El on es para estar escuchando algun evento
 socketCliente.on('disconnect', ()=>{ 
     console.log('Desconectado del servidor');
 
-    lblOnline.style.display = 'none'; //Esto es pura carpinteria para el html
+    lblOnline.style.display = 'none';
     lblOffline.style.display = '';
 
 }) //Este listener me va ayudar a saber cuando el cliente se desconecta al servidor
@@ -39,12 +39,9 @@ btnEnviar.addEventListener('click', ()=>{ // el boton estara escuchando el event
     const mensaje = txtMensaje.value; //Esto toma el valor ingresado en la caja de texto
 
     const payload = mensaje;
-        // id: '123',
-        // fecha: new Date().getTime()
-    //}
     
     socketCliente.emit('enviar-mensaje', payload, (id) => { //El tercer argumento es un callback que va a recibir lo que sea que haya sido enviado del server
-        //console.log('desde el server',id);
+        console.log('desde el server',id);
     });
 
 });

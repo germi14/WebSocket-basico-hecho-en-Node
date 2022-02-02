@@ -15,7 +15,7 @@ const socketComunicacionControler = (socket) => {
             id,
             fecha: new Date().getTime()
         }); 
-        socket.broadcast.emit('enviar-mensaje',payload);// aca no tengo el io.emit asi que debe ser socket.emit, el .broadcast es enviale el mensaje a todos los clientes
+        socket.broadcast.emit('enviar-mensaje',payload);// aca no tengo el io.emit asi que debe ser socket.emit, el .broadcast se usa para enviar el mensaje a todos los clientes
     })
     
 }

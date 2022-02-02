@@ -32,10 +32,7 @@ class Server{
 
     }
 
-    routes(){ 
-
-        // this.app.use( this.authPath, require('../routes/authRoutes'));
-        // this.app.use( this.buscarPath, require('../routes/buscarRoutes'));
+    routes(){
         
     }
 
@@ -44,6 +41,7 @@ class Server{
 
             /* Esto fue comentado porque sera trabajado con un controlador, el segundo argumento de mi this.io.on ahora sera el controlador y todo este codigo estara dentro de el
 
+            //En el caso de no utilizar un controlador esta funcion seria el segundo argumento de mi this.io.on
             socket.on('disconnect', () => {
                 //console.log('cliente desconectado');
             })
